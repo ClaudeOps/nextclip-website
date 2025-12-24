@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="NextClip - Professional video player for macOS. Navigate thousands of videos, organize instantly with keyboard control."
+    />
+    <meta
+      name="keywords"
+      content="video player, macOS, keyboard shortcuts, video organization, manage videos"
+    />
+    <title>NextClip - Navigate thousands. Organize instantly.</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="icon_1024.png" />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom styles -->
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      /* Screenshot hover effect */
+      .screenshot-hover {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .screenshot-hover:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      }
+    </style>
+  </head>
+  <body class="bg-white">
+    <!-- Header -->
+    <header class="border-b border-gray-200 sticky top-0 bg-white z-50">
+      <div
+        class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <div class="flex items-center gap-3">
+          <div
+            class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-lg"
+          >
+            N▶C
+          </div>
+          <span class="text-2xl font-bold text-gray-900">NextClip</span>
+        </div>
+        <nav class="hidden md:flex gap-8">
+          <a href="#features" class="text-gray-600 hover:text-gray-900"
+            >Features</a
+          >
+          <a href="#download" class="text-gray-600 hover:text-gray-900"
+            >Download</a
+          >
+          <a href="privacy.html" class="text-gray-600 hover:text-gray-900"
+            >Privacy</a
+          >
+        </nav>
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" class="md:hidden text-gray-600">
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <!-- Mobile menu -->
+      <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200">
+        <nav class="px-6 py-4 space-y-2">
+          <a href="#features" class="block text-gray-600 hover:text-gray-900"
+            >Features</a
+          >
+          <a href="#download" class="block text-gray-600 hover:text-gray-900"
+            >Download</a
+          >
+          <a href="privacy.html" class="block text-gray-600 hover:text-gray-900"
+            >Privacy</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <section class="max-w-6xl mx-auto px-6 py-20 text-center">
+      <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+        Navigate thousands.<br />Organize instantly.
+      </h1>
+      <p class="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
+        Professional video player for macOS users who manage large collections
+        and refuse to compromise on keyboard efficiency.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+        <a
+          href="#download"
+          class="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition"
+        >
+          Download Free
+        </a>
+        <a
+          href="#features"
+          class="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-lg text-lg font-semibold hover:border-gray-400 transition"
+        >
+          See Features
+        </a>
+      </div>
+      <p class="text-sm text-gray-500 mb-12">
+        Free with optional tips • macOS 15+ • 65 MB download
+      </p>
+
+      <div class="max-w-5xl mx-auto">
+        <img
+          src="screenshots/NC-1-Main.png"
+          alt="NextClip main interface showing video playback with keyboard controls"
+          class="w-full rounded-lg shadow-2xl screenshot-hover border border-gray-200"
+        />
+      </div>
+    </section>
+
+    <!-- Key Stats -->
+    <section class="bg-gray-50 py-16">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+          <div>
+            <div class="text-4xl font-bold text-blue-600 mb-2">10,000+</div>
+            <div class="text-gray-600">Videos handled effortlessly</div>
+          </div>
+          <div>
+            <div class="text-4xl font-bold text-blue-600 mb-2">100%</div>
+            <div class="text-gray-600">Keyboard controlled</div>
+          </div>
+          <div>
+            <div class="text-4xl font-bold text-blue-600 mb-2">3 Keys</div>
+            <div class="text-gray-600">To organize any video</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Problem -->
+    <section class="max-w-6xl mx-auto px-6 py-20">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">
+          Most video players choke on 1,000 files.
+        </h2>
+        <p class="text-xl text-gray-600">
+          NextClip handles 10,000 without breaking a sweat.
+        </p>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="bg-gray-50 py-20">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">
+          Built for real workflows
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-12 mb-16">
+          <!-- Feature 1: Scale -->
+          <div>
+            <div class="text-4xl mb-4">📊</div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-3">
+              Built for Scale
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Your 10,000-video folder doesn't scare us. NextClip was
+              architected for massive video libraries from day one.
+            </p>
+            <ul class="space-y-2 text-gray-600 mb-6">
+              <li class="flex items-start gap-2">
+                <span class="text-blue-600 mt-1">✓</span>
+                <span>Scan entire drives without UI freezes</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-blue-600 mt-1">✓</span>
+                <span>Sort thousands of files in seconds</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-blue-600 mt-1">✓</span>
+                <span>Navigate collections of any size</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-blue-600 mt-1">✓</span>
+                <span>Subfolder support for organized libraries</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Feature 2: Keyboard Control -->
+          <div>
+            <div class="text-4xl mb-4">⌨️</div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-3">
+              Complete Keyboard Control
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Your hands stay on the keyboard. Period. Every single action has a
+              keyboard shortcut.
+            </p>
+            <div
+              class="bg-white p-4 rounded-lg border border-gray-200 space-y-2 font-mono text-sm mb-6"
+            >
+              <div class="flex justify-between">
+                <span class="text-gray-600">↑↓</span>
+                <span class="text-gray-900">Previous/Next video</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-600">Space</span>
+                <span class="text-gray-900">Play/Pause</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-600">1, 2, 3</span>
+                <span class="text-gray-900">Move to preset folders</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-600">[ ]</span>
+                <span class="text-gray-900">Speed control</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-600">R</span>
+                <span class="text-gray-900">Random video</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Feature 3: Organization -->
+          <div>
+            <div class="text-4xl mb-4">📁</div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-3">
+              Organize While You Watch
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Press 1, 2, or 3. Video moved. Next. No dialogs, no confirmations,
+              no interruptions.
+            </p>
+            <ul class="space-y-2 text-gray-600 mb-6">
+              <li class="flex items-start gap-2">
+                <span class="text-blue-600 mt-1">✓</span>
+                <span>Set three destination folders in settings</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-blue-600 mt-1">✓</span>
+                <span>Single keypress to organize</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-blue-600 mt-1">✓</span>
+                <span>Perfect for sorting footage or curating collections</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-blue-600 mt-1">✓</span>
+                <span>Keep working at full speed</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Feature 4: Professional Playback -->
+          <div>
+            <div class="text-4xl mb-4">🎬</div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-3">
+              Professional Playback
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Features pros need. Speed everyone wants. Professional features
+              without the complexity.
+            </p>
+            <ul class="space-y-2 text-gray-600 mb-6">
+              <li class="flex items-start gap-2">
+                <span class="text-blue-600 mt-1">✓</span>
+                <span>10 playback speeds (0.05x to 3x)</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-blue-600 mt-1">✓</span>
+                <span>Customizable seek times</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-blue-600 mt-1">✓</span>
+                <span>Sort by name, path, size, or random</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-blue-600 mt-1">✓</span>
+                <span>Boss key for instant privacy</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Use Cases -->
+    <section class="max-w-6xl mx-auto px-6 py-20">
+      <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">
+        Perfect for
+      </h2>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="border border-gray-200 rounded-lg p-6">
+          <div class="text-3xl mb-3">🎥</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Video Editors</h3>
+          <p class="text-gray-600 mb-4">
+            Review 2,000 raw clips. Sort the keepers. What took hours now takes
+            minutes.
+          </p>
+          <ul class="text-sm text-gray-600 space-y-1">
+            <li>• Scan entire shoot folders</li>
+            <li>• Categorize takes with 1, 2, 3</li>
+            <li>• Jump to next instantly</li>
+          </ul>
+        </div>
+
+        <div class="border border-gray-200 rounded-lg p-6">
+          <div class="text-3xl mb-3">📚</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Content Curators</h3>
+          <p class="text-gray-600 mb-4">
+            Organize 5,000 videos by topic. Turn chaos into a curated library.
+          </p>
+          <ul class="text-sm text-gray-600 space-y-1">
+            <li>• Navigate thousands with arrows</li>
+            <li>• Categorize as you watch</li>
+            <li>• Random shuffle for rediscovery</li>
+          </ul>
+        </div>
+
+        <div class="border border-gray-200 rounded-lg p-6">
+          <div class="text-3xl mb-3">🔬</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Researchers</h3>
+          <p class="text-gray-600 mb-4">
+            Catalog 10,000 historical videos. Your archive, finally navigable.
+          </p>
+          <ul class="text-sm text-gray-600 space-y-1">
+            <li>• Scan complete archives</li>
+            <li>• Sort by any metadata</li>
+            <li>• Organize systematically</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Privacy Section -->
+    <section class="bg-blue-50 py-20">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <div class="text-4xl mb-4">🔒</div>
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">
+          Your videos stay yours
+        </h2>
+        <p class="text-xl text-gray-600 mb-6">
+          Zero data collection. No analytics. No tracking. No cloud sync.
+          Everything stays on your Mac.
+        </p>
+        <a
+          href="privacy.html"
+          class="text-blue-600 hover:text-blue-700 font-semibold"
+        >
+          Read our privacy policy →
+        </a>
+      </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="bg-gray-900 text-white py-20">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <h2 class="text-4xl font-bold mb-6">
+          Ready to manage thousands of videos?
+        </h2>
+        <p class="text-xl text-gray-300 mb-8">
+          Free to download and use. Pay what you want.
+        </p>
+
+        <div class="bg-gray-800 rounded-lg p-8 mb-8 max-w-2xl mx-auto">
+          <div class="flex items-center justify-between mb-4">
+            <div class="text-left">
+              <div class="font-bold text-lg">NextClip for macOS</div>
+              <div class="text-sm text-gray-400">Version 1.0 • 65 MB</div>
+            </div>
+            <a
+              href="https://github.com/ClaudeOps/nextclip/releases/latest/download/NextClip.dmg"
+              class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition"
+            >
+              Download Free
+            </a>
+          </div>
+          <div class="text-left text-sm text-gray-400 space-y-1">
+            <div>• Requires macOS 15 (Sequoia) or later</div>
+            <div>• Apple Silicon and Intel supported</div>
+            <div>• Direct download (not on App Store)</div>
+          </div>
+        </div>
+
+        <div class="border-t border-gray-700 pt-8">
+          <h3 class="text-xl font-bold mb-4">Pay What You Want</h3>
+          <p class="text-gray-300 mb-4">
+            NextClip is free. If it saves you hours of work, consider leaving a
+            tip.
+          </p>
+          <p class="text-sm text-gray-400">
+            No features locked. No nags. No time limits.<br />
+            Just a video player that respects your workflow.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="max-w-4xl mx-auto px-6 py-20">
+      <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">
+        Frequently Asked Questions
+      </h2>
+
+      <div class="space-y-6">
+        <div class="border-b border-gray-200 pb-6">
+          <h3 class="text-xl font-bold text-gray-900 mb-2">
+            How many files can NextClip handle?
+          </h3>
+          <p class="text-gray-600">
+            We've tested with 10,000+ videos. The limit is your hard drive, not
+            NextClip. Our asynchronous architecture prevents UI freezes even
+            with massive collections.
+          </p>
+        </div>
+
+        <div class="border-b border-gray-200 pb-6">
+          <h3 class="text-xl font-bold text-gray-900 mb-2">
+            Do I need to learn keyboard shortcuts?
+          </h3>
+          <p class="text-gray-600">
+            Keyboard hints are displayed on every button (optional setting).
+            Learn as you go. We also provide a complete keyboard shortcuts
+            reference window (⌘/).
+          </p>
+        </div>
+
+        <div class="border-b border-gray-200 pb-6">
+          <h3 class="text-xl font-bold text-gray-900 mb-2">
+            What's the "three-key organization" feature?
+          </h3>
+          <p class="text-gray-600">
+            Set three destination folders in settings. Press 1, 2, or 3 while
+            watching to instantly move the current video to that folder. Perfect
+            for sorting footage or organizing collections.
+          </p>
+        </div>
+
+        <div class="border-b border-gray-200 pb-6">
+          <h3 class="text-xl font-bold text-gray-900 mb-2">
+            Why isn't NextClip on the App Store?
+          </h3>
+          <p class="text-gray-600">
+            Direct distribution lets us provide the full functionality without
+            the restrictions of the App Store. Remember,
+          </p>
+        </div>
+
+        <div class="border-b border-gray-200 pb-6">
+          <h3 class="text-xl font-bold text-gray-900 mb-2">
+            What video formats are supported?
+          </h3>
+          <p class="text-gray-600">
+            NextClip uses macOS native video playback, supporting MP4, MOV, M4V,
+            and 3GP files. If QuickTime can play it, NextClip can play it.
+          </p>
+        </div>
+
+        <div class="pb-6">
+          <h3 class="text-xl font-bold text-gray-900 mb-2">
+            Is my data private?
+          </h3>
+          <p class="text-gray-600">
+            Absolutely. NextClip has zero tracking, zero analytics, and zero
+            data collection. Everything stays on your Mac.
+            <a href="privacy.html" class="text-blue-600 hover:text-blue-700"
+              >Read our privacy policy</a
+            >.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 border-t border-gray-200">
+      <div class="max-w-6xl mx-auto px-6 py-12">
+        <div class="grid md:grid-cols-4 gap-8 mb-8">
+          <div>
+            <div class="flex items-center gap-2 mb-4">
+              <div
+                class="w-8 h-8 bg-blue-600 rounded flex items-center justify-center text-white font-bold text-sm"
+              >
+                N▶C
+              </div>
+              <span class="font-bold text-gray-900">NextClip</span>
+            </div>
+            <p class="text-sm text-gray-600">
+              Professional video player for managing massive collections.
+            </p>
+          </div>
+
+          <div>
+            <h4 class="font-bold text-gray-900 mb-3">Product</h4>
+            <ul class="space-y-2 text-sm text-gray-600">
+              <li>
+                <a href="#features" class="hover:text-gray-900">Features</a>
+              </li>
+              <li>
+                <a href="#download" class="hover:text-gray-900">Download</a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-bold text-gray-900 mb-3">Support</h4>
+            <ul class="space-y-2 text-sm text-gray-600">
+              <li>
+                <a
+                  href="mailto:get-support@nextclip.app"
+                  class="hover:text-gray-900"
+                  >Email Support</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-bold text-gray-900 mb-3">Legal</h4>
+            <ul class="space-y-2 text-sm text-gray-600">
+              <li>
+                <a href="privacy.html" class="hover:text-gray-900"
+                  >Privacy Policy</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-gray-200 pt-8 text-center text-sm text-gray-600"
+        >
+          <p>
+            © 2024 NextClip. Built for professionals who manage thousands of
+            videos.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Mobile menu toggle script -->
+    <script>
+      document
+        .getElementById("mobile-menu-btn")
+        .addEventListener("click", function () {
+          var menu = document.getElementById("mobile-menu");
+          menu.classList.toggle("hidden");
+        });
+    </script>
+  </body>
+</html>
